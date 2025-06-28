@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "GoDaddy Payments by AlphaSolution",
+  "version": "1.0",
+  "description": "Auto-fill payment amount in GoDaddy Virtual Terminal from WooCommerce checkout. Developed by AlphaSolution.",
+  "content_scripts": [
+    {
+      "js": ["content-checkout.js"],
+      "matches": ["https://accessories.att-mobility.com/checkout/"]
+    },
+    {
+      "js": ["content-terminal.js"],
+      "matches": ["https://payments.godaddy.com/virtual-terminal*"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "alpha_solution_NoBg.png"
+  },
+  "action": {
+    "default_title": "GoDaddy Payments by AlphaSolution",
+    "default_icon": "alpha_solution_NoBg.png",
+    "default_popup": "popup.html"
+  }
+}
